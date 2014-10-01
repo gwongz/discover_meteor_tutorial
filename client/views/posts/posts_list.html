@@ -1,5 +1,6 @@
 <template name="postsList">
   <div class="posts">
+  	<!-- helper sets value of this inside the block to iterated object -->
     {{#each posts}}
       {{> postItem}}
     {{/each}}
