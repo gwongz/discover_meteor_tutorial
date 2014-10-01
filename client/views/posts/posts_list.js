@@ -23,6 +23,9 @@ var postsData = [
 Template.postsList.helpers({
     // return all objects in the Posts collection
     posts: function(){
-        return Posts.find();
+        return Posts.find({
+            // author: 'bob-smith',
+            // category: 'JavaScript'
+        });
   }
 });
