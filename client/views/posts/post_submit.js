@@ -12,13 +12,17 @@ Template.postSubmit.events({
 		
 		// Using a method instead of directly inserting
 		Meteor.call('post', post, function(error, id){
-			if (error)
+			if (error){
 				return alert(error.reason);
-
-			// constructs url to redirect user to 
-			Router.go('postPage', {_id: id);
+			}
 		});
 
+		Router.go('postsList');
+
+			// constructs url to redirect user to 
+			// Router.go('postPage', {_id: id});
+
+		
 		// post._id = Posts.insert(post);
 		
 

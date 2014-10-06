@@ -26,6 +26,6 @@ Template.postsList.helpers({
         return Posts.find({
             // author: 'bob-smith',
             // category: 'JavaScript'
-        });
+        }, {sort:{submitted: -1}});
   }
 });
