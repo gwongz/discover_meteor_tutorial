@@ -6,5 +6,9 @@
 meteor-platform
 insecure
 bootstrap
+<<<<<<< HEAD
 iron:router
+=======
+iron-router
+>>>>>>> cd66f26206c9890b1e5a20dc5162ad74d359c925
 
