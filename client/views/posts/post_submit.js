@@ -9,9 +9,20 @@ Template.postSubmit.events({
 			title: $(e.target).find('[name=title]').val(),
 			message: $(e.target).find('[name=message]').val()
 		};
-		post._id = Posts.insert(post);
-		// constructs url to redirect user to 
-		Router.go('postPage', post);
+		
+		// Using a method instead of directly inserting
+		Meteor.call('post', post, function(error, id){
+			if (error)
+				return alert(error.reason);
+
+			// constructs url to redirect user to 
+			Router.go('postPage', {_id: id);
+		});
+
+		// post._id = Posts.insert(post);
+		
+
+
 	}
 
 });
