@@ -3,3 +3,4 @@ Template.layout.helpers({
 		return Session.get('pageTitle');
 	}
 });
+
