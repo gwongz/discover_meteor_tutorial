@@ -1,5 +1,6 @@
 {
   "packages": {
-    "spin": {}
+    "spin": {},
+    "accounts-ui-bootstrap-dropdown": {}
   }
 }
