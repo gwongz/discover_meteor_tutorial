@@ -13,20 +13,17 @@ Template.postSubmit.events({
 		// Using a method instead of directly inserting
 		Meteor.call('post', post, function(error, id){
 			if (error){
-				return alert(error.reason);
+				throwError(error.reason);
+				// return alert(error.reason);
+				if (error.error === 302)
+					Router.go('postPage', {_id: error.details});
+			} else {
+				// no error 
+				Router.go('postPage', {_id: id});
+
 			}
 		});
-
-		Router.go('postsList');
-
-			// constructs url to redirect user to 
-			// Router.go('postPage', {_id: id});
-
-		
-		// post._id = Posts.insert(post);
-		
-
-
+	
 	}
 
 });
