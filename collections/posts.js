@@ -20,6 +20,15 @@ Posts.allow({
 //     }
 // });
 
+Posts.deny({
+    update: function(userId, post, fieldNames){
+        // if fields other than url and title are being changed, returns true and permission denied
+        return (_.without(fieldNames, 'url', 'title').length > 0);
+
+    }
+
+});
+
 // Using a Meteor method that happens on server, so don't 
 // need to declare client permission
 Meteor.methods({
