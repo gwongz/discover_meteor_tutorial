@@ -10,6 +10,5 @@ throwError = function(message){
 
 // once an error has been displayed to user, remove it from the collection
 clearErrors = function(){
-    console.log('removing seen errors');
     Errors.remove({seen: true});
 };
